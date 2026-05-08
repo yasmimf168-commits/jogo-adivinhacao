@@ -67,6 +67,21 @@
     <script>
 
       function VerifcarPalpite(){
+            //-------------------------
+        // 1º Verificas se o jogador digitou
+        //    algum número na caixa de texto
+        //-------------------------
+      let caixaDeTexto = document.getElementById('TXTPalpite');
+      let dvMensagem = document.getElementById('DIVMensagem');
+
+      let chuteDoJogador = parseInt(caixaDeTexto.value);
+      
+
+      //Validação do número digitado. O campo não pode ser vazio e o número deve estar entre 0 e 100
+      if( isNaN(chuteDoJogador)|| chuteDoJogador < 1 || chuteDoJogador > 100){
+        dvMensagem.textContent = 'PorFavor, insira um número válido entre 1 a 100';
+      }else{
+        dvMensagem.textContent = 'numero valido: '+chuteDoJogador;
             console.log('Passei por aqui' );
       }
 
